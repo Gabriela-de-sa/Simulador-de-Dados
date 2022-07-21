@@ -1,0 +1,36 @@
+from random import randint
+
+class SimuladorDados:
+    def __init__(self):
+        self.valor_minimo = 1  # valor minimo do dado
+        self.valor_maximo = 6  # valor maximo do dado
+
+    
+    def iniciar(self):
+        resp = input('Deseja continuar? [S/N] ').strip().upper()[0]
+        if resp == 'S':
+            self.jogo()
+        elif resp == 'N':
+            print('Fim de jogo')
+        else:
+            print('Ocorreu um erro de digitacao. Tente novamente')
+
+    
+    def jogo(self):
+        print('Iniciar partida!!')
+        minimo = randint(self.valor_minimo, self.valor_maximo)
+        maximo = randint(self.valor_minimo, self.valor_maximo)
+        print(f'Primeiro dado: {minimo}')
+        print(f'Segundo dado: {maximo}')
+        soma = minimo + maximo
+        if soma > 5:
+            print('Parabens!! Voce ganhou a partida.')
+            self.iniciar()
+        else:
+            print('Voce perdeu!! Tente novamente...')
+            self.iniciar()
+
+simulador = SimuladorDados()
+simulador.iniciar()
+
+
