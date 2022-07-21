@@ -14,8 +14,9 @@ class SimuladorDados:
             print('Fim de jogo')
         else:
             print('Ocorreu um erro de digitacao. Tente novamente')
+            self.iniciar()
 
-    
+
     def jogo(self):
         print('Iniciar partida!!')
         minimo = randint(self.valor_minimo, self.valor_maximo)
